@@ -336,7 +336,7 @@ if not st.session_state.authenticated:
                     message = f"Your OTP for CabOnTheGo is {generated_otp}"
                     with st.status("Sending OTP...") as status:
                         if fm.send_email(email, message, "OTP"):
-                            status.update(label="OTP Sent Successfully!! Check mail.", state="complete", expanded=True)
+                            status.update(label="OTP Sent Successfully!! Check mail.", state="complete", expanded=False)
                         else:
                             status.update(label="Can't send OTP!!!", state="error")
                 given_otp = st.text_input("Enter The OTP!", key="driver_forgetpswd_otp").strip()
